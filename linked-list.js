@@ -98,7 +98,29 @@ class LinkedList {
       }
     }
   }
-  reverse() {}
+  reverse() {
+    let currNode = this.head;
+    let tempNode = null;
+    let nextNode = null;
+
+    while (currNode) {
+      // Store next node.
+      nextNode = currNode.next;
+
+      // Change next node of the current node so it would link to previous node.
+      currNode.next = tempNode;
+
+      // Move tempNode and currNode nodes one step forward.
+      tempNode = currNode;
+      currNode = nextNode;
+    }
+
+    // Reset head and tail.
+    this.tail = null;
+    this.head = tempNode;
+
+    return this;
+  }
 }
 
 const LL = new LinkedList();
@@ -117,9 +139,9 @@ LL.insertNodeAtFirst(node5);
 // console.log("<====== Linked List ======>", LL);
 console.log("<====== Traverse ======>", LL.traverse());
 // console.log("<====== Traverse ======>", LL.find(12));
-console.log("<====== Delete ======>", LL.delete(11));
+// console.log("<====== Delete ======>", LL.delete(11));
+console.log("-----------", LL.reverse());
 console.log("<====== Traverse ======>", LL.traverse());
-console.log("-----------", LL);
 
 // const fromArray = new LinkedList().LLfromArray([1, 2, 3, 45, 5]);
 // console.log("<====== From Array ======>", fromArray);

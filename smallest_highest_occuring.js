@@ -19,9 +19,10 @@ function mostFrequenMeal(array) {
       }
     }
   });
-  console.log("Smallest : ", smallest);
+  console.log("Smallest : ", obj, smallest);
   return smallest;
 }
 
-const array = [1, 4, 4, 4, 3, 2, 1, 6];
+const array = [1, 4, 4, 4, 3, 2, 1, 6, 1];
+
 console.log(mostFrequenMeal(array));

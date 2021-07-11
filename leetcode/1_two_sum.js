@@ -34,15 +34,7 @@
 
 // Using hashmap - O(n)
 var twoSum = function (nums, target) {
-  if (
-    nums.length < 2 ||
-    nums.length > Math.pow(10, 4) ||
-    target > Math.pow(10, 9)
-  )
-    return;
-
   const hashMap = {};
-
   for (let i = 0; i < nums.length; i++) {
     const num = nums[i];
     const secondNum = target - num;
